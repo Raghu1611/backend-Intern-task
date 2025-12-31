@@ -68,14 +68,7 @@ server.js       # App entry point, middleware setup, DB connection
 
 ---
 
-## ⚙️ Prerequisites
 
-Ensure you have the following installed on your machine:
-*   [Node.js](https://nodejs.org/) (v16 or higher)
-*   [MongoDB](https://www.mongodb.com/try/download/community) (Locally running or Atlas URI)
-*   [Git](https://git-scm.com/)
-
----
 
 ## 🔐 Environment Variables
 
@@ -87,13 +80,11 @@ You need to set up environment variables for the backend to function correctly.
 **`.env` Example:**
 ```properties
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/interntask
+MONGO_URI=mongodburi
 JWT_SECRET=your_super_secret_jwt_key_here
 ```
 
-> **❗ IMPORTANT:** The `.env` file contains sensitive secrets and is ignored by Git (`.gitignore`). **Never** commit it to a public repository.
 
----
 
 ## 🚀 Setup & Installation Instructions
 
@@ -176,25 +167,6 @@ This project is built with scalability in mind:
 
 *   **Modular Architecture:** The `controller-service` pattern allows logic to be separated easily.
 *   **Microservices Ready:** The functionality (Auth vs Tasks) is decoupled enough to be split into separate microservices (`auth-service`, `task-service`) behind an API Gateway in the future.
-*   **Caching (Optional):** Redis can be integrated to cache `GET /tasks` requests to reduce DB load for read-heavy applications.
-*   **Containerization:** A `Dockerfile` can be added to containerize the app for orchestration via Kubernetes or AWS ECS.
 
----
 
-## 📦 Deployment (Optional)
 
-Deployment is not strictly required for this assignment, but the app is "Deployment Ready".
-*   **Backend:** Can be deployed to Render, Railway, or Heroku.
-*   **Frontend:** Can be deployed to Vercel or Netlify.
-*   **DB:** MongoDB Atlas.
-
----
-
-## 📝 Submission Notes
-
-*   **Logging:** The backend uses `morgan` to log HTTP requests to the console for easier debugging/auditing.
-*   **Testing Roles:** You can manually update the `role` field of a user in MongoDB to `admin` to test Admin-specific routes (if refined further in future updates).
-*   **Postman:** Don't forget to use the provided JSON collection for testing!
-
-***
-*Developed by Intern Candidate*
